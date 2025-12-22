@@ -313,7 +313,7 @@
         <h4><i class="fas fa-clock"></i> Business Hours</h4>
         <ul>
           <li><strong>Days:</strong> All days</li>
-          <li><strong>Hours:</strong> 02:00 - 06:00 (your local)</li>
+          <li><strong>Hours:</strong> 14:00 - 18:00 Germany time</li>
           <li><strong>Services:</strong> Short (30m) or Full (60m)</li>
         </ul>
       </div>
@@ -638,9 +638,14 @@
 
     // Default date = tomorrow (not weekend-specific anymore; use tomorrow)
     function getTomorrow() {
-      const d = new Date();
-      d.setDate(d.getDate() + 1);
-      return d.toISOString().split('T')[0];
+        const d = new Date();
+        d.setDate(d.getDate() + 1);
+
+        const yyyy = d.getFullYear();
+        const mm = String(d.getMonth() + 1).padStart(2, '0');
+        const dd = String(d.getDate()).padStart(2, '0');
+
+        return `${yyyy}-${mm}-${dd}`;
     }
 
     document.getElementById('date').value = getTomorrow();
