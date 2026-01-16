@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sathya Booking System</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -15,7 +16,11 @@
       padding: 20px;
     }
 
-    body.teal-theme { background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%); }
+    /* ✅ Leafy Ayurvedic Green Theme (uses class: teal-theme) */
+    body.teal-theme {
+      background: linear-gradient(135deg, #43a047 0%, #1b5e20 100%);
+    }
+
     body.iframe-mode { background: transparent !important; }
     body.iframe-mode.header { border-radius: 10px; }
     body.iframe-mode .container { background: white; box-shadow: none; border-radius: 0; }
@@ -29,7 +34,12 @@
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white; padding: 30px; text-align: center;
     }
-    body.teal-theme .header { background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%); }
+
+    /* ✅ Leafy header */
+    body.teal-theme .header {
+      background: linear-gradient(135deg, #43a047 0%, #1b5e20 100%);
+    }
+
     .header h1 { font-size: 28px; margin-bottom: 8px; }
     .header p { opacity: 0.9; font-size: 16px; }
 
@@ -49,7 +59,12 @@
       background: white;
     }
     .form-group input:focus, .form-group select:focus { outline: none; border-color: #667eea; }
-    body.teal-theme .form-group input:focus, body.teal-theme .form-group select:focus { border-color: #14b8a6; }
+
+    /* ✅ Leafy focus */
+    body.teal-theme .form-group input:focus,
+    body.teal-theme .form-group select:focus {
+      border-color: #43a047;
+    }
 
     .time-slots-container { margin-top: 20px; }
     .time-slots-grid {
@@ -70,10 +85,18 @@
       font-weight: 500;
     }
     .time-slot:hover { border-color: #667eea; background: #f8fafc; }
-    body.teal-theme .time-slot:hover { border-color: #14b8a6; }
+
+    /* ✅ Leafy hover */
+    body.teal-theme .time-slot:hover { border-color: #43a047; }
 
     .time-slot.selected { border-color: #667eea; background: #667eea; color: white; }
-    body.teal-theme .time-slot.selected { border-color: #14b8a6; background: #14b8a6; }
+
+    /* ✅ Leafy selected */
+    body.teal-theme .time-slot.selected {
+      border-color: #43a047;
+      background: #43a047;
+      color: white;
+    }
 
     .time-slot.disabled {
       background: #f3f4f6; color: #9ca3af; cursor: not-allowed; border-color: #d1d5db;
@@ -98,7 +121,12 @@
       transition: transform 0.2s;
       margin-top: 20px;
     }
-    body.teal-theme .btn { background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%); }
+
+    /* ✅ Leafy button */
+    body.teal-theme .btn {
+      background: linear-gradient(135deg, #43a047 0%, #1b5e20 100%);
+    }
+
     .btn:hover { transform: translateY(-2px); }
     .btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
 
@@ -115,12 +143,16 @@
     .toast.error { background: #dc2626; }
     .toast.warning { background: #f59e0b; }
     .toast.success { background: #059669; }
-    body.teal-theme .toast.success { background: #0d9488; }
+
+    /* ✅ Leafy toast success */
+    body.teal-theme .toast.success { background: #2e7d32; }
+
     body.teal-theme.iframe-mode .toast.success {
-      background: #059669; border: 2px solid #047857; box-shadow: 0 4px 12px rgba(5,150,105,0.3);
+      background: #2e7d32;
+      border: 2px solid #1b5e20;
+      box-shadow: 0 4px 12px rgba(46,125,50,0.3);
     }
-    body.teal-theme .toast.error { background: #dc2626; }
-    body.teal-theme .toast.warning { background: #f59e0b; }
+
     .toast i { margin-right: 8px; }
 
     .business-hours {
@@ -132,11 +164,14 @@
       font-size: 14px;
       color: #1e40af;
     }
+
+    /* ✅ Leafy business hours */
     body.teal-theme .business-hours {
-      background: #ccfbf1;
-      border: 1px solid #5eead4;
-      color: #0f766e;
+      background: #e8f5e9;
+      border: 1px solid #a5d6a7;
+      color: #1b5e20;
     }
+
     .business-hours h4 { margin-bottom: 8px; font-size: 16px; }
     .business-hours ul { margin-left: 20px; }
     .business-hours li { margin-bottom: 4px; }
@@ -151,7 +186,10 @@
       cursor: pointer; transition: background-color 0.3s;
     }
     .toggle-switch.active { background: #667eea; }
-    body.teal-theme .toggle-switch.active { background: #14b8a6; }
+
+    /* ✅ Leafy toggle */
+    body.teal-theme .toggle-switch.active { background: #43a047; }
+
     .toggle-knob {
       position: absolute; top: 3px; left: 3px;
       width: 24px; height: 24px;
@@ -162,9 +200,11 @@
     .toggle-switch.active .toggle-knob { transform: translateX(30px); }
     .toggle-label { font-weight: 500; color: #374151; font-size: 16px; }
     .toggle-label.active { color: #667eea; }
-    body.teal-theme .toggle-label.active { color: #14b8a6; }
 
-    /* Chat (kept as in your file) */
+    /* ✅ Leafy label active */
+    body.teal-theme .toggle-label.active { color: #43a047; }
+
+    /* Chat */
     .chat-container { display: none; height: 500px; flex-direction: column; }
     .chat-container.active { display: flex; }
     .chat-messages {
@@ -179,11 +219,17 @@
       font-size: 14px; font-weight: bold; color: white; flex-shrink: 0;
     }
     .chat-message.user .avatar { background: #667eea; }
-    body.teal-theme .chat-message.user .avatar { background: #14b8a6; }
+
+    /* ✅ Leafy user avatar */
+    body.teal-theme .chat-message.user .avatar { background: #43a047; }
+
     .chat-message.bot .avatar { background: #6b7280; }
     .chat-bubble { max-width: 80%; padding: 12px 16px; border-radius: 18px; word-wrap: break-word; }
     .chat-message.user .chat-bubble { background: #667eea; color: white; border-bottom-right-radius: 6px; }
-    body.teal-theme .chat-message.user .chat-bubble { background: #14b8a6; }
+
+    /* ✅ Leafy user bubble */
+    body.teal-theme .chat-message.user .chat-bubble { background: #43a047; }
+
     .chat-message.bot .chat-bubble {
       background: white; color: #374151; border: 1px solid #e5e7eb; border-bottom-left-radius: 6px;
     }
@@ -194,14 +240,20 @@
       min-height: 44px; max-height: 120px;
     }
     .chat-input:focus { border-color: #667eea; }
-    body.teal-theme .chat-input:focus { border-color: #14b8a6; }
+
+    /* ✅ Leafy chat input focus */
+    body.teal-theme .chat-input:focus { border-color: #43a047; }
+
     .chat-send-btn {
       width: 44px; height: 44px; border: none; border-radius: 50%;
       background: #667eea; color: white; cursor: pointer;
       display: flex; align-items: center; justify-content: center;
       transition: transform 0.2s;
     }
-    body.teal-theme .chat-send-btn { background: #14b8a6; }
+
+    /* ✅ Leafy send button */
+    body.teal-theme .chat-send-btn { background: #43a047; }
+
     .chat-send-btn:hover { transform: scale(1.05); }
     .chat-send-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
 
@@ -276,7 +328,7 @@
         </button>
       </form>
 
-      <!-- Chat Interface (unchanged) -->
+      <!-- Chat Interface -->
       <div class="chat-container" id="chat-container">
         <div class="chat-messages" id="chat-messages">
           <div class="chat-message bot">
@@ -321,16 +373,20 @@
   </div>
 
   <script>
-    const BASE = 'https://sathya306023.app.n8n.cloud';
+    const BASE = 'https://sathya306027.app.n8n.cloud';
     const MAIN_URL_MAKE_BOOKING  = `${BASE}/webhook/appointment-booking`;
     const MAIN_URL_CHECK_BOOKING = `${BASE}/webhook/check-booking-date`;
     const MAIN_URL_CHAT_BOOKING  = `${BASE}/webhook/chat-booking`;
 
+    // ✅ Default to Leafy theme (teal-theme) unless user explicitly sets ?theme=purple
     function checkTheme() {
       const urlParams = new URLSearchParams(window.location.search);
       const theme = urlParams.get('theme');
       const iframeMode = urlParams.get('iframeMode');
-      if (theme === 'teal') document.body.classList.add('teal-theme');
+
+      // Default = leafy
+      if (theme !== 'purple') document.body.classList.add('teal-theme');
+
       if (iframeMode === 'true') document.body.classList.add('iframe-mode');
     }
     checkTheme();
@@ -470,7 +526,7 @@
     function checkDateAndLoadSlots(date) {
       const timeSlotsGrid = document.getElementById('time-slots-grid');
       const submitBtn = document.getElementById('submit-btn');
-      const service = document.getElementById('service').value || 'short'; // ✅
+      const service = document.getElementById('service').value || 'short';
 
       // prevent past dates
       const today = new Date();
@@ -491,14 +547,13 @@
       fetch(MAIN_URL_CHECK_BOOKING, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ date: date, service: service }) // ✅
+        body: JSON.stringify({ date: date, service: service })
       })
       .then(response => response.json())
       .then(data => {
         console.log('Slots response:', data);
 
         if (data.success) {
-          // If you removed holiday/weekend checks in n8n, these fields might not exist; safe-check:
           if (data.isHoliday) {
             timeSlotsGrid.innerHTML = `<div style="text-align:center; padding:20px; color:#dc2626;">${data.holidayMessage || 'Holiday'}</div>`;
             submitBtn.disabled = true;
@@ -561,21 +616,18 @@
       console.log('Selected time slot:', time);
     }
 
-    // ✅ Date change reloads slots
     document.getElementById('date').addEventListener('change', function (e) {
       const selectedDate = e.target.value;
       selectedTimeSlot = null;
       if (selectedDate) checkDateAndLoadSlots(selectedDate);
     });
 
-    // ✅ Service change reloads slots
     document.getElementById('service').addEventListener('change', function () {
       const selectedDate = document.getElementById('date').value;
       selectedTimeSlot = null;
       if (selectedDate) checkDateAndLoadSlots(selectedDate);
     });
 
-    // ✅ IMPORTANT: send service to /appointment-booking
     document.getElementById('booking-form').addEventListener('submit', function (e) {
       e.preventDefault();
 
@@ -590,7 +642,7 @@
         phone: document.getElementById('phone').value.trim(),
         date: document.getElementById('date').value,
         time: selectedTimeSlot,
-        service: document.getElementById('service').value, // ✅
+        service: document.getElementById('service').value,
         source: 'Booking System'
       };
 
@@ -636,24 +688,18 @@
       });
     });
 
-    // Default date = tomorrow (not weekend-specific anymore; use tomorrow)
     function getTomorrow() {
-        const d = new Date();
-        d.setDate(d.getDate() + 1);
-
-        const yyyy = d.getFullYear();
-        const mm = String(d.getMonth() + 1).padStart(2, '0');
-        const dd = String(d.getDate()).padStart(2, '0');
-
-        return `${yyyy}-${mm}-${dd}`;
+      const d = new Date();
+      d.setDate(d.getDate() + 1);
+      const yyyy = d.getFullYear();
+      const mm = String(d.getMonth() + 1).padStart(2, '0');
+      const dd = String(d.getDate()).padStart(2, '0');
+      return `${yyyy}-${mm}-${dd}`;
     }
 
     document.getElementById('date').value = getTomorrow();
-
-    // Initial load (uses selected service)
     setTimeout(() => { checkDateAndLoadSlots(getTomorrow()); }, 100);
 
-    // Toggle + chat listeners
     document.getElementById('mode-toggle').addEventListener('click', toggleMode);
 
     const chatInput = document.getElementById('chat-input');
